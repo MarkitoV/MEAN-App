@@ -1,0 +1,134 @@
+1.- para inciar un nuevo proyecto de node
+
+    npm init -y
+
+2.- instalar typescript como una dependencia de desarrollo
+
+    npm i typescript -D
+
+    para ejecutarlo e iniciar un nuevo proyecto de typscript, escribir en la consola
+
+    npx tsc --init
+
+    en el archivo tsconfig.json cambiamos
+
+    "target": "es5", a: "target": "es2019"
+
+    en el mismo archivo, descomentamos la opción
+
+    "moduleResolution": "node"
+
+3.- instalamos el framework de node express
+
+    npm i express
+
+    ademas instalamos un modulo para que typescript reconosca los tipos de datos de express
+
+    npm i @types/express -D
+
+4.- para compilar el código, añadimos un script al archivo package.json
+
+    "build": "tsc"
+
+    además, en el archivo tsconfig.json descomentar las lineas y editar como sigue
+
+    "outDir": "./dist/",
+    "rootDir": "./src/",
+
+    para ejeutar y compilar el código
+
+    npm run build
+
+    para ejecutar el servidor
+
+    node dist/index.js
+
+5.- instalamos rimraf para limpiar la carpeta /dist antes de una nueva compilación
+
+    npm i rimraf
+
+    luego, añadimos el siguiente script al archivo packaje.json
+
+    "clean": "rimraf dist"
+
+    para ejecutar la limpieza ejecutamos el comando
+
+    npm run clean
+
+6.- para iniciar el servidor de una manera más facil añadimos el siguiente script al
+    archivo packaje.json
+
+    "start": "npm run build && node dist/index.js"
+
+    para iniciarlo con este script
+
+    npm start
+
+7.- instalamos nodemon para probar el código en tiempo de desarrollo y tengamos que estar
+    reiniciando el servidor con cada cambio
+
+    npm i nodemon -D
+
+    para utilizarlo, añadimos otro script al archivo package.json
+
+    "dev": "nodemon src/index.ts"
+
+    para ejecutar node con typescript instalamos el siguiente modulo
+
+    npm i ts-node
+
+    para que nodemon pueda trabajar con archivos .ts creamos un archivo en la raiz de
+    nuestro proyecto: "nodemon.json" con el siguiente contenido
+
+    {
+      "watch": ["src"],
+      "ext": "ts",
+      "ignore": [
+        "src/**/*.spec.ts"
+      ],
+      "exec": "ts-node"
+    }
+
+    finalmente lo ejecutamos con
+
+    npm run dev
+
+8.- para poder ver las peticiones por consola
+
+    npm i morgan
+
+    tambien instalamos los tipos de datos de morgan
+
+    npm i @types/morgan -D
+
+9.- instalamos mongoose para poder trabajar con bases de datos Mongo
+
+    npm i mongoose
+
+    tambien instalamos los tipos de datos de mongoose
+
+    npm i @types/mongoose -D
+
+10.- instalamos el módulo multer para que el servidor pueda guardar imagenes
+
+    npm i multer
+
+    tambien instalamos los tipos de datos de multer
+
+    npm i @types/multer -D
+
+    para generar nombres aleatorios para nuestras imagenes, instalamos
+
+    npm i uuid
+
+    tambien instalamos los tipos de datos de uuid
+
+    npm i @types/uuid -D
+
+11.- instalamos el módulo fs-extra para poder eliminar los archivos de la carpeta uploads
+
+    npm i fs-extra
+
+    tambien instalamos los tipos de datos para fs-extra
+
+    npm i @types/fs-extra -D
