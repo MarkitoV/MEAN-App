@@ -1,0 +1,7 @@
+.card-guide {
+  cursor: pointer;
+}
+
+.card-guide:hover {
+  border: 1px solid #33333360;
+}

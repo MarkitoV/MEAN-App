@@ -1,6 +1,6 @@
 1.- clonamos el backend desde un repositorio de GitHub
 
-    git clone https://github.com/MarkitoV/photo-gallery-api.git
+    git clone https://github.com/MarkitoV/guide-gallery-api.git
 
 2.- dentro del backend, instalamos todas las dependencias
 
@@ -12,26 +12,26 @@
 
 4.- para crear el frontend, fuera del backend, en el archivo raíz de nuestro proyecto
 
-    ng new angular-photo-gallery --routing
+    ng new angular-guide-gallery --routing
 
     escojemos las siguientes opciones
 
     CSS (.css)
 
-5.- dentro de la carpeta angular-photo-gallery, iniciamos el proyecto de angular
+5.- dentro de la carpeta angular-guide-gallery, iniciamos el proyecto de angular
 
     ng serve
 
 4.- generamos los siguientes componentes para la aplicación de angular
 
     ng g c components/navigation
-    ng g c components/photo-form
-    ng g c components/photo-preview
-    ng g c components/photo-list
+    ng g c components/guide-form
+    ng g c components/guide-preview
+    ng g c components/guide-list
 
 5.- generamos los siguientes servicios
 
-    ng g s services/photo
+    ng g s services/guide
 
 6.- instalamos el framework de css bootswatch
 

@@ -1,0 +1,45 @@
+<div class="col-lg-8 mx-auto">
+  <div class="card">
+    <div class="card-header">
+      <h1>Subir una guía de laboratorio</h1>
+    </div>
+    <div class="card-body">
+      <form (submit)="uploadGuide(title, description, subject, numberLab, semester, docent)">
+        <div class="form-group row">
+          <label >Título</label>
+          <input type="text" class="form-control" placeholder="Título de la guía" required #title>
+        </div>
+
+        <div class="form-group row">
+          <label>Descripción</label>
+          <textarea rows="2" class="form-control" placeholder="Descripción de la gía" required #description></textarea>
+        </div>
+
+        <div class="form-group row">
+          <label>Asignatura</label>
+          <input type="text" class="form-control" placeholder="Asignatura de la guía" required #subject>
+        </div>
+
+        <div class="form-group row">
+          <label>Número</label>
+          <input type="text" class="form-control" placeholder="Número de la guía" required #numberLab>
+        </div>
+
+        <div class="form-group row">
+          <label>Semestre</label>
+          <input type="text" class="form-control" placeholder="Semestre de la guía" required #semester>
+        </div>
+
+        <div class="form-group row">
+          <label>Docente</label>
+          <input type="text" class="form-control" placeholder="Nombre del docente" required #docent>
+        </div>
+
+        <input type="file" class="d-none" (change)="onGuideSelected($event)" #guideInput>
+        <img [src]="guideSelected || 'assets/no-image.png'" class="img-fluid" alt="No image" (click)="guideInput.click()">
+
+        <button class="btn btn-primary btn-block">Upload</button>
+      </form>
+    </div>
+  </div>
+</div>

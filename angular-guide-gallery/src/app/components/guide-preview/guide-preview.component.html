@@ -1,0 +1,56 @@
+<div class="row" *ngIf="!guide; else main_content">
+  <h1>Loading...</h1>
+</div>
+
+<ng-template #main_content>
+  <div class="row">
+    <div class="col-md-5">
+      <div class="card">
+        <img [src]="'http://localhost:4000/' + guide.imagePath" class="img-fluid">
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        <form action="" class="card-body" (submit)="updateGuide(title, description, subject, numberLab, semester, docent)">
+          <div class="form-group">
+            <label>Título</label>
+            <input type="text" class="form-control" placeholder="Título de la guía" [value]="guide.title" #title>
+          </div>
+
+          <div class="form-group">
+            <label>Descripción</label>
+            <textarea rows="2" class="form-control" placeholder="descripción de la guía" [value]="guide.description" #description></textarea>
+          </div>
+
+          <div class="form-group">
+            <label>Materia</label>
+            <input type="text" class="form-control" placeholder="Materia de la guía" [value]="guide.subject" #subject>
+          </div>
+
+          <div class="form-group">
+            <label>Número</label>
+            <input type="text" class="form-control" placeholder="Número de guía" [value]="guide.numberLab" #numberLab>
+          </div>
+
+          <div class="form-group">
+            <label>Semestre</label>
+            <input type="text" class="form-control" placeholder="Semestre de la guía" [value]="guide.semester" #semester>
+          </div>
+
+          <div class="form-group">
+            <label>Docente</label>
+            <input type="text" class="form-control" placeholder="Docente de la guía" [value]="guide.docent" #docent>
+          </div>
+
+          <button class="btn btn-primary btn-block">
+            Update
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-danger" (click)="deleteGuide(guide._id)">
+    Delete
+  </button>
+</ng-template>
+

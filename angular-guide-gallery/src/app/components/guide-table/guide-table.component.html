@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-md-12 p-4">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Título</th>
+          <th scope="col">Materia</th>
+          <th scope="col">Número de guía</th>
+          <th scope="col">Semestre</th>
+          <th scope="col">Docente</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let guide of guides" (click)="selectedRow(guide._id)">
+          <td> {{ guide.title }} </td>
+          <td> {{ guide.subject }} </td>
+          <td> {{ guide.numberLab }} </td>
+          <td> {{ guide.semester }} </td>
+          <td> {{ guide.docent }} </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
