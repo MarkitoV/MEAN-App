@@ -11,9 +11,15 @@ export async function getGuides(req: Request, res: Response): Promise<Response> 
 }
 
 export async function getGuide(req: Request, res: Response): Promise<Response> {
-
+  
   const guide = await Guide.findById(req.params.id);
   return res.json(guide);
+}
+
+export async function getGuidesBySubject(req: Request, res: Response): Promise<Response> {
+
+  const guides = await Guide.find({ subject: req.params.subject });
+  return res.json(guides);
 }
 
 export async function createGuide(req: Request, res: Response): Promise<Response> {

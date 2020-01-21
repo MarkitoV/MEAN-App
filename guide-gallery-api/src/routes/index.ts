@@ -2,7 +2,7 @@ import { Router } from 'express';
 const router = Router();
 
 import { 
-  createGuide, getGuides, getGuide, deleteGuide, updateGuide
+  createGuide, getGuides, getGuide, getGuidesBySubject, deleteGuide, updateGuide
 } from '../controllers/guide.controllers';
 
 import multer from '../libs/multer';
@@ -15,5 +15,8 @@ router.route('/guides/:id')
   .get(getGuide)
   .delete(deleteGuide)
   .put(updateGuide);
+
+router.route('/guidesBySubject/:subject')
+  .get(getGuidesBySubject);
 
 export default router;
